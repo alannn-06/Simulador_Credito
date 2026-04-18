@@ -1,70 +1,183 @@
+/* PALETA VERDE CORPORATIVA */
+:root {
+    --verde-principal: #0f6b3c;
+    --verde-secundario: #1f8f4e;
+    --verde-claro: #e8f5ee;
+    --gris-fondo: #f4f6f8;
+    --gris-texto: #5f6b7a;
+}
+
+/* BODY */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f6f8;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: linear-gradient(135deg, #eef7f1, #1dc96d);
     margin: 0;
-    padding: 0;
-}
-
-.container {
-    width: 400px;
-    margin: 40px auto;
     padding: 20px;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
-
-h1 {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-h2 {
-    margin-top: 20px;
-    font-size: 18px;
-}
-
-label {
-    display: block;
-    margin-top: 10px;
-    font-weight: bold;
-}
-
-input {
-    width: 100%;
-    padding: 8px;
-    margin-top: 5px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-}
-
-p {
-    margin-top: 10px;
-}
-
-span {
-    font-weight: bold;
     color: #2c3e50;
 }
 
-.buttons {
-    margin-top: 20px;
-    display: flex;
-    justify-content: space-between;
+/* CONTENEDOR */
+.container {
+    max-width: 480px;
+    width: 100%;
+    margin: auto;
+    padding: 25px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    border-top: 6px solid var(--verde-principal);
 }
 
-button {
-    width: 48%;
+/* TITULO */
+h1 {
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 26px;
+    color: var(--verde-principal);
+}
+
+/* SUBTITULOS */
+h2 {
+    margin-top: 25px;
+    font-size: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--gris-texto);
+    border-left: 4px solid var(--verde-principal);
+    padding-left: 10px;
+}
+
+/* LABELS */
+label {
+    display: block;
+    margin-top: 15px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* INPUTS */
+input {
+    width: 100%;
     padding: 10px;
+    margin-top: 6px;
+    border-radius: 6px;
+    border: 1px solid #ccd6e0;
+    font-size: 14px;
+    transition: 0.2s;
+    background-color: #fafcfa;
+}
+
+/* FOCUS VERDE */
+input:focus {
+    border-color: var(--verde-principal);
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(15,107,60,0.15);
+}
+
+/* TEXTO RESULTADOS */
+p {
+    margin-top: 12px;
+    font-size: 14px;
+}
+
+/* VALORES */
+span {
+    font-weight: 600;
+    color: var(--verde-principal);
+}
+
+/* BOTONES */
+.buttons {
+    margin-top: 25px;
+    display: flex;
+    gap: 10px;
+}
+
+/* BOTÓN PRINCIPAL */
+#btnCalcularCredito {
+    flex: 1;
+    padding: 12px;
     border: none;
-    border-radius: 5px;
-    background-color: #3498db;
+    border-radius: 6px;
+    background: linear-gradient(135deg, var(--verde-principal), var(--verde-secundario));
     color: white;
-    font-weight: bold;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+/* HOVER */
+#btnCalcularCredito:hover {
+    opacity: 0.9;
+}
+
+/* BOTÓN SECUNDARIO */
+#btnReiniciar {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    background-color: #dfe6e3;
+    color: #2c3e50;
+    font-weight: 600;
     cursor: pointer;
 }
 
-button:hover {
-    background-color: #2980b9;
+/* HOVER */
+#btnReiniciar:hover {
+    background-color: #cfd8d3;
+}
+
+/* ESTADO DE CRÉDITO */
+#spnEstadoCredito {
+    padding: 4px 8px;
+    border-radius: 5px;
+    background-color: var(--verde-claro);
+}
+
+/* ========================= */
+/* 📱 RESPONSIVE */
+/* ========================= */
+@media (max-width: 480px) {
+    .buttons {
+        flex-direction: column;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    h2 {
+        font-size: 14px;
+    }
+}
+
+/* HEADER CON ICONO */
+.header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 15px;
+}
+
+/* LOGO */
+.logo {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+/* EFECTO HOVER */
+.logo:hover {
+    transform: scale(1.1);
+}
+
+/* AJUSTE TITULO */
+.header h1 {
+    margin: 0;
+    font-size: 24px;
+    color: var(--verde-principal);
 }
