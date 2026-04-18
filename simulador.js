@@ -10,4 +10,22 @@ function calcular(){
     let capacidad = calcularCapacidadPago(resultadoDisponible);
     let lblCapacidad = document.getElementById("spnCapacidadPago");
     lblCapacidad.textContent = capacidad.toFixed(2);
+
+    let cmpMonto = document.getElementById("txtMonto");
+    let cmpPlazo = document.getElementById("txtPlazo");
+    let cmpTasa = document.getElementById("txtTasaInteres");
+    let monto = parseInt(cmpMonto.value);
+    let plazo = parseInt(cmpPlazo.value);
+    let tasa = parseInt(cmpTasa.value);
+    let interesTotal = calcularInteresSimple(monto, plazo, tasa);
+    let lblIntereses = document.getElementById("spnInteresPagar");
+    lblIntereses.textContent = interesTotal.toFixed(2);
+
+    let totalPrestamo = calcularTotalPagar(monto, interesTotal)
+    let lblPrestamo = document.getElementById("spnTotalPrestamo");
+    lblPrestamo.textContent = totalPrestamo.toFixed(2);
+
+    let cuota = calcularCuotaMensual(totalPrestamo, plazo);
+    let lblCuota = document.getElementById("spnCuotaMensual");
+    lblCuota.textContent = cuota.toFixed(2);
 }
