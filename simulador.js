@@ -21,11 +21,19 @@ function calcular(){
     let lblIntereses = document.getElementById("spnInteresPagar");
     lblIntereses.textContent = interesTotal.toFixed(2);
 
-    let totalPrestamo = calcularTotalPagar(monto, interesTotal)
+    let totalPrestamo = calcularTotalPagar(monto, interesTotal);
     let lblPrestamo = document.getElementById("spnTotalPrestamo");
     lblPrestamo.textContent = totalPrestamo.toFixed(2);
 
     let cuota = calcularCuotaMensual(totalPrestamo, plazo);
     let lblCuota = document.getElementById("spnCuotaMensual");
     lblCuota.textContent = cuota.toFixed(2);
+
+    let credito = aporbarCredito(capacidad, cuota);
+    let lblCredito = document.getElementById("spnEstadoCredito");
+    if(credito == true){
+        lblCredito.textContent = "CRÉDITO APROBADO";
+    }else{
+        lblCredito.textContent = "CRÉDITO RECHAZADO";
+    }
 }
