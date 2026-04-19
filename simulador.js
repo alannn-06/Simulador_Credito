@@ -37,3 +37,49 @@ function calcular(){
         lblCredito.textContent = "CRÉDITO RECHAZADO";
     }
 }
+
+function validarCampo(input) {
+    const valor = input.value.trim();
+    const id = input.id;
+    const error = document.getElementById("error_" + id);
+
+    error.textContent = "";
+
+    // Validar vacío
+    if (valor === "") {
+        error.textContent = "Este campo no puede estar vacío";
+        return;
+    }
+
+    // Validar solo números
+    if (!/^\d+$/.test(valor)) {
+        error.textContent = "Solo se permiten números";
+        return;
+    }
+
+    // Validaciones específicas por campo
+    switch (id) {
+        case "txtIngresos":
+        case "txtEgresos":
+        case "txtMonto":
+            if (valor.length > 5) {
+                error.textContent = "Máximo 5 dígitos";
+            }
+            break;
+
+        case "txtTasaInteres":
+            if (valor.length > 3) {
+                error.textContent = "Máximo 3 dígitos";
+            }
+            if (parseInt(valor) > 100) {
+                error.textContent = "La tasa de interés no puede ser mayor a 100%";
+            }
+            break;
+
+        case "txtPlazo":
+            if (parseInt(valor) > 10) {
+                error.textContent = "El plazo máximo es 10 años";
+            }
+            break;
+    }
+}
