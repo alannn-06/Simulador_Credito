@@ -13,7 +13,7 @@
     <div class="container">
         <div class="header">
         <a target="_blank"><img src="logo.png" alt="Logo" class="logo"></a>
-        <h1>Simulador de Crédito</h1>
+        <h1>Simulador de Crédito PRODUBANCO</h1>
         </div>
 
         <h2>Datos financieros</h2>
@@ -21,9 +21,19 @@
         <input type="text" id="txtIngresos" onblur="validarCampo(this)">
         <span id="error_txtIngresos" class="error"></span>
 
-        <label for="txtEgresos">Egresos:</label>
-        <input type="text" id="txtEgresos" onblur="validarCampo(this)">
-        <span id="error_txtEgresos" class="error"></span>
+        <label for="txtArriendo">Arriendo:</label>
+        <input type="text" id="txtArriendo" onblur="validarCampo(this)">
+        <span id="error_txtArriendo" class="error"></span>
+
+        <label for="txtAlimentacion">Alimentación:</label>
+        <input type="text" id="txtAlimentacion" onblur="validarCampo(this)">
+        <span id="error_txtAlimentacion" class="error"></span>
+
+        <label for="txtVarios">Varios:</label>
+        <input type="text" id="txtVarios" onblur="validarCampo(this)">
+        <span id="error_txtVarios" class="error"></span>
+
+        <p>Total Gastos: <span id="spnTotalGastos"></span></p>
 
         <p>Disponible: <span id="spnDisponible"></span></p>
         <p>Capacidad de pago mensual: <span id="spnCapacidadPago"></span></p>

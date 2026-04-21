@@ -1,9 +1,21 @@
 function calcular(){
     let cmpIngresos = document.getElementById("txtIngresos");
-    let cmpEgresos = document.getElementById("txtEgresos");
-    let ingresos = parseFloat(cmpIngresos.value);
-    let egresos = parseFloat(cmpEgresos.value);
-    let resultadoDisponible = calcularDisponible(ingresos, egresos);
+    
+    
+    let arriendo = parseFloat(document.getElementById("txtArriendo").value) || 0;
+    let alimentacion = parseFloat(document.getElementById("txtAlimentacion").value) || 0;
+    let varios = parseFloat(document.getElementById("txtVarios").value) || 0;
+    
+    
+    let totalEgresos = arriendo + alimentacion + varios;
+    
+    
+    document.getElementById("spnTotalGastos").textContent = totalEgresos.toFixed(2);
+
+    let ingresos = parseFloat(cmpIngresos.value) || 0;
+    
+    // Se usa el totalEgresos para el cálculo disponible
+    let resultadoDisponible = calcularDisponible(ingresos, totalEgresos);
     let lblResultado = document.getElementById("spnDisponible");
     lblResultado.textContent = resultadoDisponible.toFixed(2);
     
@@ -14,9 +26,11 @@ function calcular(){
     let cmpMonto = document.getElementById("txtMonto");
     let cmpPlazo = document.getElementById("txtPlazo");
     let cmpTasa = document.getElementById("txtTasaInteres");
-    let monto = parseInt(cmpMonto.value);
-    let plazo = parseInt(cmpPlazo.value);
-    let tasa = parseInt(cmpTasa.value);
+    
+    let monto = parseInt(cmpMonto.value) || 0;
+    let plazo = parseInt(cmpPlazo.value) || 0;
+    let tasa = parseInt(cmpTasa.value) || 0;
+    
     let interesTotal = calcularInteresSimple(monto, plazo, tasa);
     let lblIntereses = document.getElementById("spnInteresPagar");
     lblIntereses.textContent = interesTotal.toFixed(2);
